@@ -1,0 +1,330 @@
+[*] Launched 'ls -la /' as pid 10960 — tracing...
+
+=== VM Tracer ===
+Tracing: page faults, mmap/munmap/mprotect/mremap, brk, stack
+Press Ctrl-C to stop
+
+
+┌─ PAGE_FAULT_FILE   pid=10959  (vm_tracer)  cpu time=31011.541552s
+│  fault addr : 0x0000fadaf1ffd4c0
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf1f40000 – 0x0000fadaf20da000  (1640 KB)
+│    flags : r-xp
+│    pgoff : 0
+│    file  : libc.so.6  (inode 55851)
+└──────────────────────────────────────────────────────────────
+
+┌─ FORK         parent=10959  (vm_tracer) → child=10960  (vm_tracer)  time=31011.541738s
+│  child mm cloned from parent (copy-on-write)
+│  [mm layout]
+│    code  segment: 0x0000ad63d8c70000 – 0x0000ad63d8d571ec  (924 KB)
+│    data  segment: 0x0000ad63d8d6fc58 – 0x0000ad63d8d70010  (0 KB)
+│    heap          : 0x0000ad640a792000 – 0x0000ad640a7cf000  (244 KB)
+│    stack base    : 0x0000ffffeffcb040
+│    mmap base     : 0x0000fadaf21c2000
+│    VMA count     : 33
+│    total_vm      : 1212 pages  (4848 KB)
+│    exec_vm       : 986 pages
+│    data_vm       : 86 pages
+│    locked_vm     : 0 pages
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10959  (vm_tracer)  cpu time=31011.541754s
+│  fault addr : 0x0000ffffeffcace0
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000ffffeffab000 – 0x0000ffffeffcc000  (132 KB)
+│    flags : rw-p GROWSDOWN(stack)
+│    pgoff : 68719476703
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10959  (vm_tracer)  cpu time=31011.541763s
+│  fault addr : 0x0000fadaf20f15e0
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf20f0000 – 0x0000fadaf20f2000  (8 KB)
+│    flags : rw-p
+│    pgoff : 416
+│    file  : libc.so.6  (inode 55851)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10959  (vm_tracer)  cpu time=31011.541769s
+│  fault addr : 0x0000fadaf20f0ab0
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf20f0000 – 0x0000fadaf20f2000  (8 KB)
+│    flags : rw-p
+│    pgoff : 416
+│    file  : libc.so.6  (inode 55851)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10959  (vm_tracer)  cpu time=31011.541771s
+│  fault addr : 0x0000ad640a7b09c8
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000ad640a792000 – 0x0000ad640a7cf000  (244 KB)
+│    flags : rw-p
+│    pgoff : 46544234386
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10959  (vm_tracer)  cpu time=31011.541772s
+│  fault addr : 0x0000ad640a7b19d8
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000ad640a792000 – 0x0000ad640a7cf000  (244 KB)
+│    flags : rw-p
+│    pgoff : 46544234386
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.541782s
+│  fault addr : 0x0000fadaf21b0eb0
+│  type       : READ (user space)
+│  [VMA]
+│    range : 0x0000fadaf21b0000 – 0x0000fadaf21b2000  (8 KB)
+│    flags : rw-p
+│    pgoff : 67338445232
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.541817s
+│  fault addr : 0x0000fadaf21b1508
+│  type       : READ (user space)
+│  [VMA]
+│    range : 0x0000fadaf21b0000 – 0x0000fadaf21b2000  (8 KB)
+│    flags : rw-p
+│    pgoff : 67338445232
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.541818s
+│  fault addr : 0x0000fadaf21b1508
+│  type       : READ (user space)
+│  [VMA]
+│    range : 0x0000fadaf21b0000 – 0x0000fadaf21b2000  (8 KB)
+│    flags : rw-p
+│    pgoff : 67338445232
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541821s
+│  fault addr : 0x0000fadaf1ffd4ec
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf1f40000 – 0x0000fadaf20da000  (1640 KB)
+│    flags : r-xp
+│    pgoff : 0
+│    file  : libc.so.6  (inode 55851)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.541824s
+│  fault addr : 0x0000ffffeffcad30
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000ffffeffab000 – 0x0000ffffeffcc000  (132 KB)
+│    flags : rw-p GROWSDOWN(stack)
+│    pgoff : 68719476703
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541825s
+│  fault addr : 0x0000fadaf2001ba0
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf1f40000 – 0x0000fadaf20da000  (1640 KB)
+│    flags : r-xp
+│    pgoff : 0
+│    file  : libc.so.6  (inode 55851)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.541826s
+│  fault addr : 0x0000ffffeffcae50
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000ffffeffab000 – 0x0000ffffeffcc000  (132 KB)
+│    flags : rw-p GROWSDOWN(stack)
+│    pgoff : 68719476703
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.541827s
+│  fault addr : 0x0000fadaf20f65b8
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf20f2000 – 0x0000fadaf20fe000  (48 KB)
+│    flags : rw-p
+│    pgoff : 67338445042
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541828s
+│  fault addr : 0x0000fadaf20effa8
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf20ed000 – 0x0000fadaf20f0000  (12 KB)
+│    flags : r--p
+│    pgoff : 413
+│    file  : libc.so.6  (inode 55851)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.541828s
+│  fault addr : 0x0000fadaf20f65b8
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf20f2000 – 0x0000fadaf20fe000  (48 KB)
+│    flags : rw-p
+│    pgoff : 67338445042
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541835s
+│  fault addr : 0x0000fadaf21c1188
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf21c0000 – 0x0000fadaf21c2000  (8 KB)
+│    flags : rw-p
+│    pgoff : 48
+│    file  : ld-linux-aarch64.so.1  (inode 55848)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541836s
+│  fault addr : 0x0000fadaf21c0a98
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf21c0000 – 0x0000fadaf21c2000  (8 KB)
+│    flags : rw-p
+│    pgoff : 48
+│    file  : ld-linux-aarch64.so.1  (inode 55848)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541837s
+│  fault addr : 0x0000fadaf21c1168
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf21c0000 – 0x0000fadaf21c2000  (8 KB)
+│    flags : rw-p
+│    pgoff : 48
+│    file  : ld-linux-aarch64.so.1  (inode 55848)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541839s
+│  fault addr : 0x0000fadaf2015790
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf1f40000 – 0x0000fadaf20da000  (1640 KB)
+│    flags : r-xp
+│    pgoff : 0
+│    file  : libc.so.6  (inode 55851)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541840s
+│  fault addr : 0x0000fadaf21bfb50
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf21be000 – 0x0000fadaf21c0000  (8 KB)
+│    flags : r--p
+│    pgoff : 46
+│    file  : ld-linux-aarch64.so.1  (inode 55848)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541840s
+│  fault addr : 0x0000ad63d8c714e4
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000ad63d8c70000 – 0x0000ad63d8d58000  (928 KB)
+│    flags : r-xp
+│    pgoff : 0
+│    file  : vm_tracer  (inode 785239)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541843s
+│  fault addr : 0x0000ad63d8d6fea0
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000ad63d8d6f000 – 0x0000ad63d8d70000  (4 KB)
+│    flags : r--p
+│    pgoff : 239
+│    file  : vm_tracer  (inode 785239)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541844s
+│  fault addr : 0x0000fadaf1f7cb20
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf1f40000 – 0x0000fadaf20da000  (1640 KB)
+│    flags : r-xp
+│    pgoff : 0
+│    file  : libc.so.6  (inode 55851)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_FILE   pid=10960  (vm_tracer)  cpu time=31011.541845s
+│  fault addr : 0x0000fadaf1fcc810
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf1f40000 – 0x0000fadaf20da000  (1640 KB)
+│    flags : r-xp
+│    pgoff : 0
+│    file  : libc.so.6  (inode 55851)
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.542688s
+│  fault addr : 0x0000fadaf20f7298
+│  type       : READ EXEC (user space)
+│  [VMA]
+│    range : 0x0000fadaf20f2000 – 0x0000fadaf20fe000  (48 KB)
+│    flags : rw-p
+│    pgoff : 67338445042
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.542707s
+│  fault addr : 0x0000ffffeffcb068
+│  type       : READ (user space)
+│  [VMA]
+│    range : 0x0000ffffeffab000 – 0x0000ffffeffcc000  (132 KB)
+│    flags : rw-p GROWSDOWN(stack)
+│    pgoff : 68719476703
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+
+┌─ PAGE_FAULT_ANON   pid=10960  (vm_tracer)  cpu time=31011.542708s
+│  fault addr : 0x0000fffffffffff0
+│  type       : READ (kernel)
+│  [VMA]
+│    range : 0x0000fffffffff000 – 0x0001000000000000  (4 KB)
+│    flags : rw-p GROWSDOWN(stack)
+│    pgoff : 68719476735
+│    file  : [anonymous]
+└──────────────────────────────────────────────────────────────
+total 88
+drwxr-xr-x  23 root root  4096 Jan 22 22:36 .
+drwxr-xr-x  23 root root  4096 Jan 22 22:36 ..
+lrwxrwxrwx   1 root root     7 Apr 22  2024 bin -> usr/bin
+drwxr-xr-x   2 root root  4096 Feb 26  2024 bin.usr-is-merged
+drwxr-xr-x   4 root root  4096 Mar  2 10:00 boot
+dr-xr-xr-x   2 root root  4096 Jan 22 22:35 cdrom
+drwxr-xr-x  18 root root  3920 Feb 20 18:48 dev
+drwxr-xr-x 106 root root  4096 Mar  2 10:00 etc
+drwxr-xr-x   3 root root  4096 Jan 22 22:41 home
+lrwxrwxrwx   1 root root     7 Apr 22  2024 lib -> usr/lib
+drwxr-xr-x   2 root root  4096 Feb 26  2024 lib.usr-is-merged
+drwx------   2 root root 16384 Jan 22 22:36 lost+found
+drwxr-xr-x   2 root root  4096 Aug  6  2025 media
+drwxr-xr-x   2 root root  4096 Aug  6  2025 mnt
+drwxr-xr-x   2 root root  4096 Aug  6  2025 opt
+dr-xr-xr-x 212 root root     0 Feb 19 18:38 proc
+drwx------   3 root root  4096 Jan 22 22:41 root
+drwxr-xr-x  30 root root   940 Mar  2 10:00 run
+lrwxrwxrwx   1 root root     8 Apr 22  2024 sbin -> usr/sbin
+drwxr-xr-x   2 root root  4096 Jul 10  2025 sbin.usr-is-merged
+drwxr-xr-x   2 root root  4096 Jan 22 22:41 snap
+drwxr-xr-x   2 root root  4096 Aug  6  2025 srv
+dr-xr-xr-x  13 root root     0 Mar  2 10:05 sys
+drwxrwxrwt  13 root root  4096 Mar  2 10:05 tmp
+drwxr-xr-x  11 root root  4096 Aug  6  2025 usr
+drwxr-xr-x  13 root root  4096 Jan 22 22:41 var
+
+=== VM Tracer stopped ===
