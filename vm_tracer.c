@@ -15,6 +15,7 @@
 #include <errno.h>
 #include <time.h>
 #include <fcntl.h>
+#include <stdarg.h>
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <bpf/libbpf.h>
@@ -321,6 +322,13 @@ static int handle_event(void *ctx, void *data, size_t sz)
     return 0;
 }
 
+// ── libbpf logging ───────────────────────────────────────────────────────────
+static int libbpf_print_fn(enum libbpf_print_level level, const char *fmt,
+                           va_list args)
+{
+    return vfprintf(stderr, fmt, args);
+}
+
 // ── signal / globals ─────────────────────────────────────────────────────────
 static volatile int stop = 0;
 static void sig_handler(int sig) { stop = 1; }
@@ -356,7 +364,7 @@ int main(int argc, char **argv)
         }
     }
 
-    libbpf_set_print(NULL);
+    libbpf_set_print(libbpf_print_fn);
 
     struct vm_tracer_bpf *skel = vm_tracer_bpf__open();
     if (!skel) {
