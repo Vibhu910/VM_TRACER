@@ -587,9 +587,12 @@ int trace_brk_exit(struct trace_event_raw_sys_exit *ctx)
 
 // ─────────────────────────────────────────────
 //  7.  Stack growth (expand_stack)
-//      Fires when the stack VMA is grown downward
-//      in response to a fault below the current stack bottom
+//      NOTE: This fexit program can be rejected by older kernels'
+//      BPF verifier. To keep the tracer working broadly, this has
+//      been disabled for now. Re‑enable by removing the #if 0 guard
+//      if your kernel supports fexit/expand_stack.
 // ─────────────────────────────────────────────
+#if 0
 SEC("fexit/expand_stack")
 int BPF_PROG(trace_stack_grow,
              struct vm_area_struct *vma,
@@ -622,6 +625,7 @@ int BPF_PROG(trace_stack_grow,
     bpf_ringbuf_submit(e, 0);
     return 0;
 }
+#endif
 
 // ─────────────────────────────────────────────
 //  8.  Fork — child's mm cloned from parent
