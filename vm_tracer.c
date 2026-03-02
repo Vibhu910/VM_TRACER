@@ -427,7 +427,6 @@ int main(int argc, char **argv)
 
     signal(SIGINT,  sig_handler);
     signal(SIGTERM, sig_handler);
-    signal(SIGCHLD, sig_handler); // stop when child exits
 
     // ── If we forked a child, resume it now ──────────────────────────────────
     if (child > 0) {
